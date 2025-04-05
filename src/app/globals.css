@@ -8,9 +8,12 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-anakinmono: var(--font-anakin-mono);
+  --font-distant-galaxy: var(--font-distant-galaxy);
+  --font-sterilict: var(--font-sterilict);
   --color-primary: #FFE81F;
+  --color-vivid-orange: #FDB50A;
+  --color-sw-green: #2FF924;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -40,7 +43,7 @@ button {
 
 .lightsaber-link:hover,
 .lightsaber-link.active {
-  color: #2FF924; /* Lightsaber color (green) */
+  color: #2ff924; /* Lightsaber color (green) */
   text-shadow: 0 0 10px rgba(47, 249, 36, 0.8), 0 0 10px rgba(47, 249, 36, 0.8); /* Glowing effect */
 }
 

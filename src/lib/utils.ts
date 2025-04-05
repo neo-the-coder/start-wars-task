@@ -1,0 +1,1 @@
+export const extractId = (url: string) => url.split('/').filter(Boolean).pop();

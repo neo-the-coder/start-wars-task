@@ -1,19 +1,22 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from 'next/font/local';
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import Image from "next/image";
-import Link from "next/link";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+const anakinMono = localFont({
+  src: '../../public/fonts/anakinmono.ttf',
+  variable: '--font-anakin-mono'
+})
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const distantGalaxy = localFont({
+  src: '../../public/fonts/SFDistantGalaxy.ttf',
+  variable: '--font-distant-galaxy'
+})
+
+const sterilict = localFont({
+  src: '../../public/fonts/Sterilict.ttf',
+  variable: '--font-sterilict'
+})
 
 export const metadata: Metadata = {
   title: "Star Wars Explorer",
@@ -28,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${anakinMono.variable} ${distantGalaxy.variable} ${sterilict.variable} antialiased`}
       >
         <Navbar />
         <main>{children}</main>
