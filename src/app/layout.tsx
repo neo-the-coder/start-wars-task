@@ -29,7 +29,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <header>
+        <header className="sticky sm:static sm:contents top-0 w-full z-10">
           <div className="hidden sm:block my-5">
             <Image
               src="/images/Star_Wars_Yellow_Logo.svg"
