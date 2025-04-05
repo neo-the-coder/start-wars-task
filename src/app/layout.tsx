@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,18 +30,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <header className="sticky sm:static sm:contents top-0 w-full z-10">
-          <div className="hidden sm:block my-5">
-            <Image
-              src="/images/Star_Wars_Yellow_Logo.svg"
-              alt="Star Wars Logo"
-              width={250}
-              height={100}
-              className="block mx-auto"
-            />
-          </div>
-          <Navbar />
-        </header>
+        <Navbar />
         <main>{children}</main>
       </body>
     </html>
