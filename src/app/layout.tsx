@@ -18,6 +18,11 @@ const sterilict = localFont({
   variable: '--font-sterilict'
 })
 
+const starJediOut = localFont({
+  src: '../../public/fonts/Starjout.ttf',
+  variable: '--font-star-jedi-outline'
+})
+
 export const metadata: Metadata = {
   title: "Star Wars Explorer",
   description: "Explore Star Wars Universe using SWAPI",
@@ -31,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${anakinMono.variable} ${distantGalaxy.variable} ${sterilict.variable} antialiased`}
+        className={`${anakinMono.variable} ${distantGalaxy.variable} ${sterilict.variable} ${starJediOut.variable} antialiased`}
       >
         <Navbar />
         <main>{children}</main>

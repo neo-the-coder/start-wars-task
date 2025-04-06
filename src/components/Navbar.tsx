@@ -31,15 +31,14 @@ const Navbar = () => {
       </div>
       <nav className="bg-gray-900 p-4 z-20 sm:sticky sm:top-0 drop-shadow-sm drop-shadow-black">
         <div className="mx-auto max-w-5xl flex items-center justify-between sm:justify-center gap-4 p-4 sm:p-0 bg-gray-900">
-
           {/* Desktop nav */}
-          <div className="hidden sm:flex gap-6">
+          <div className="hidden sm:flex gap-3 md:gap-6">
             {links.map((res) => (
               <Link
                 key={res}
                 href={`/${res}`}
                 className={`capitalize lightsaber-link font-sterilict ${
-                  path === `/${res}` ? "active" : ""
+                  path.startsWith(`/${res}`) ? "active" : ""
                 }`}
               >
                 {res}
@@ -87,7 +86,7 @@ const Navbar = () => {
               key={res}
               href={`/${res}`}
               className={`capitalize font-sterilict text-center w-full px-4 py-2 lightsaber-link ${
-                path === `/${res}` ? "active" : ""
+                path.startsWith(`/${res}`) ? "active" : ""
               }`}
               onClick={() => setIsOpen(false)}
             >
