@@ -30,7 +30,7 @@ export default function PeopleList({ initialPeople }: PeopleListProps) {
   }, [inView]);
 
   return (
-    <div className="px-8">
+    <div className="p-8 pt-0">
       <h1 className="text-3xl text-center font-distant-galaxy tracking-wider space-x-2 my-8">People</h1>
       
       <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">

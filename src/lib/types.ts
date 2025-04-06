@@ -1,83 +1,86 @@
 export interface IEntity {
-  // id: number;
+  name: string
   edited: string;
   created: string;
   url: string;
-  films?: IFilm[];
+  films: string[];
 }
 
-export interface IFilm extends IEntity {
-  species: ISpecies[];
-  releaseDate: string;
+export interface IFilm extends Omit<IEntity, 'name'> {
   title: string;
-  producer: string;
-  starships?: IStarship[];
-  vehicles?: IVehicle[];
-  episodeId: number;
-  planets: IPlanet[];
+  episode_id: number;
+  opening_crawl: string;
   director: string;
-  characters: IPerson[];
-  openingCrawl: string;
+  producer: string;
+  releaseDate: string;
+  characters: string[];
+  planets: string[];
+  starships: string[];
+  vehicles: string[];
+  species: string[];
 }
 
 export interface ICharacter extends IEntity {
-  name: string;
-  homeworld?: IPlanet;
-  skinColors: string[];
-  hairColors: string[];
+  homeworld: string;
 }
 
 export interface ISpecies extends ICharacter {
+  classification: string;
   designation: string;
-  name: string;
-  people?: IPerson[];
+  average_height: number;
+  skin_colors: string;
+  hair_colors: string;
+  eye_colors: string;
+  average_lifespan: string;
   language: string;
-  averageLifespan: number;
-  averageHeight: number;
-  eyeColors: string[];
+  people: string[];
 }
 
-export type Gender = 'male' | 'female' | 'n/a' | 'unknown';
+type Gender = 'male' | 'female' | 'n/a' | 'unknown';
 
 export interface IPerson extends ICharacter {
-  height: string;
-  starships?: IStarship[];
-  vehicles?: IVehicle[];
-  birth_year: string;
-  gender?: Gender;
+  skin_color: string;
+  hair_color: string;
   eye_color: string;
-  species: ISpecies[];
+  height: string;
+  starships: string[];
+  vehicles: string[];
+  birth_year: string;
+  gender: Gender;
+  species: string[];
   mass: number;
 }
 
 export interface IPlanet extends IEntity {
-  orbitalPeriod: number;
+  rotation_period: string;
+  orbital_period: string;
+  diameter: string;
   climate: string;
-  rotationPeriod: number;
+  gravity: string;
   terrain: string;
-  residents?: IPerson[];
-  population: number;
-  surfaceWater: number;
-}
-
-export interface IStarship extends IVehicle {
-  hyperdriveRating: string;
-  MGLT: number;
-  starshipClass: string;
+  surface_water: string;
+  population: string;
+  residents: string[];
 }
 
 export interface IVehicle extends IEntity {
-  length: number;
-  manufacturer: string;
-  cargoCapacity: number;
-  maxAtmosphericSpeed: number;
-  costInCredits: number;
-  pilots?: IPerson[];
-  consumables: number;
   model: string;
-  vehicleClass: string;
-  passengers: number;
-  crew: number;
+  manufacturer: string;
+  cost_in_credits: string;
+  length: string;
+  max_atmosphering_speed: string;
+  crew: string;
+  passengers: string;
+  cargo_capacity: string;
+  consumables: string;
+  vehicle_class: string;
+  pilots?: string[];
+}
+
+export interface IStarship extends IVehicle {
+  hyperdrive_rating: string;
+  MGLT: string;
+  starship_class: string;
 }
 
 export interface IAPIResponse {
