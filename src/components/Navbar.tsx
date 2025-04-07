@@ -1,18 +1,9 @@
 "use client";
 
-import { routesUnion } from "@/lib/types";
 import Link from "next/link";
+import { routes } from "@/lib/utils";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-
-const routes: routesUnion[] = [
-  "films",
-  "people",
-  "starships",
-  "vehicles",
-  "species",
-  "planets",
-];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

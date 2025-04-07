@@ -36,10 +36,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${anakinMono.variable} ${distantGalaxy.variable} ${sterilict.variable} ${starJediOut.variable} antialiased`}
+        className={`${anakinMono.variable} ${distantGalaxy.variable} ${sterilict.variable} ${starJediOut.variable} antialiased bg-[url(/images/bg.webp)]`}
       >
         <Navbar />
         <main>{children}</main>
+        <footer>Made with love by neo-the-coder</footer>
       </body>
     </html>
   );

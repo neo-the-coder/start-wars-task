@@ -65,6 +65,15 @@ export const shownDetails: {
   ],
 };
 
+export const routes: routesUnion[] = [
+  "films",
+  "people",
+  "starships",
+  "vehicles",
+  "species",
+  "planets",
+];
+
 export const formattedValue = (value: string, detailProp: IEntityKeysUnion) => {
   if (value.toLowerCase() === "n/a") return value;
   switch (detailProp) {

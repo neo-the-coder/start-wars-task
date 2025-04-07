@@ -14,13 +14,13 @@ export default function Details({ name, children, filmDescription }: DetailsProp
     .join("");
 
   return (
-    <main className="min-h-screen max-w-4xl mx-auto bg-background p-10 pt-0">
+    <section className="min-h-screen max-w-4xl mx-auto p-10 pt-0">
       <Breadcrumbs />
       <section className="from-gray-900 to-gray-700 bg-gradient-to-t p-8 rounded-md shadow-lg">
         <header className="mt-4 mb-12">
           {/* Avatar */}
           <div className="mx-auto w-30 h-30 rounded-full bg-black border-primary border-2 flex items-center justify-center mb-8">
-            <span className="text-2xl tracking-wider font-sterilict tracking-widest text-primary">
+            <span className="text-2xl font-sterilict tracking-widest text-primary">
               {initials}
             </span>
           </div>
@@ -41,6 +41,6 @@ export default function Details({ name, children, filmDescription }: DetailsProp
           </ul>
         </div>
       </section>
-    </main>
+    </section>
   );
 }

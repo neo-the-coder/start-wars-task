@@ -18,7 +18,7 @@ export default function Card({
   const details = shownDetails[route];
   return (
     <Link href={`/${route}/${id}`}>
-      <div className="min-h-[200px] bg-black p-4 border-4 border-vivid-orange shadow-md rounded-md hover:bg-gray-600 transition font-distant-galaxy h-full">
+      <div className="min-h-[200px] bg-black/60 p-4 border-4 border-vivid-orange shadow-md rounded-md hover:bg-gray-600 transition font-distant-galaxy h-full">
         <h2 className="font-sterilict max-sm:text-xl text-center tracking-wider text-vivid-orange font-normal mb-8 lowercase">
           {name}
         </h2>
