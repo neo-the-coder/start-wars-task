@@ -1,22 +1,11 @@
 "use server";
 
-import { IFilmsAPIResponse, IPeopleAPIResponse } from "./types";
+import { IAPIResponseUnion } from "./types";
 
-export const fetchPeople = async (url: string): Promise<IPeopleAPIResponse> => {
+export const fetchEntities = async (url: string): Promise<IAPIResponseUnion> => {
   try {
     const response = await fetch(url, { cache: "force-cache" });
-    const data = (await response.json()) as IPeopleAPIResponse;
-    return data;
-  } catch (error: unknown) {
-    console.log(error);
-    throw new Error(`An error happened: ${error}`);
-  }
-};
-
-export const fetchFilms = async (url: string): Promise<IFilmsAPIResponse> => {
-  try {
-    const response = await fetch(url, { cache: "force-cache" });
-    const data = (await response.json()) as IFilmsAPIResponse;
+    const data: IAPIResponseUnion = (await response.json());
     return data;
   } catch (error: unknown) {
     console.log(error);

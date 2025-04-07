@@ -37,7 +37,7 @@ export default function List({
   }, [inView]);
 
   return (
-    <div className="p-8 pt-0">
+    <div className="p-8 pt-0 max-w-7xl mx-auto">
       <h1 className="text-3xl text-center font-distant-galaxy tracking-wider space-x-2 my-8 capitalize">
         {route}
       </h1>

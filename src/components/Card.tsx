@@ -29,7 +29,7 @@ export default function Card({
               detailProp
             );
 
-            return <SingleValueRow title={detailTitle} value={value} key={detailTitle} />;
+            return <SingleValueRow title={detailTitle} value={value} key={detailProp} />;
           })}
         </ul>
       </div>
