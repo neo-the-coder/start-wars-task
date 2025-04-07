@@ -16,7 +16,7 @@ export function SingleValueRow({ title, value }: SingleValueRowProps) {
   return (
     <li className="flex justify-between gap-x-4">
       <span className="uppercase">{title}:</span>
-      <span className="text-primary">{value}</span>
+      <span className="text-primary text-end">{value}</span>
     </li>
   );
 }

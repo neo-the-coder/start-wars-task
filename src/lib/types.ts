@@ -1,18 +1,18 @@
 export interface IEntity {
-  name: string
+  name: string;
   edited: string;
   created: string;
   url: string;
   films: string[];
 }
 
-export interface IFilm extends Omit<IEntity, 'name'> {
+export interface IFilm extends Omit<IEntity, "name"> {
   title: string;
   episode_id: number;
   opening_crawl: string;
   director: string;
   producer: string;
-  releaseDate: string;
+  release_date: string;
   characters: string[];
   planets: string[];
   starships: string[];
@@ -36,7 +36,7 @@ export interface ISpecies extends ICharacter {
   people: string[];
 }
 
-type Gender = 'male' | 'female' | 'n/a' | 'unknown';
+type Gender = "male" | "female" | "n/a" | "unknown";
 
 export interface IPerson extends ICharacter {
   skin_color: string;
@@ -92,3 +92,43 @@ export interface IAPIResponse {
 export interface IPeopleAPIResponse extends IAPIResponse {
   results: IPerson[];
 }
+
+export interface IFilmsAPIResponse extends IAPIResponse {
+  results: IFilm[];
+}
+
+export interface IStarshipsAPIResponse extends IAPIResponse {
+  results: IStarship[];
+}
+
+export interface IVehiclesAPIResponse extends IAPIResponse {
+  results: IVehicle[];
+}
+
+export interface ISpeciesAPIResponse extends IAPIResponse {
+  results: ISpecies[];
+}
+
+export interface IPlanetsAPIResponse extends IAPIResponse {
+  results: IPlanet[];
+}
+
+export type IAPIResponseUnion =
+  | IFilmsAPIResponse
+  | IPeopleAPIResponse
+  | IStarshipsAPIResponse
+  | IVehiclesAPIResponse
+  | ISpeciesAPIResponse
+  | IPlanetsAPIResponse;
+
+export type IEntityUnion = IFilm | IPerson | IStarship | IVehicle | ISpecies | IPlanet;
+
+export type IEntityKeysUnion = keyof IPerson | keyof IVehicle | keyof IFilm | keyof IStarship | keyof ISpecies | keyof IPlanet;
+
+export type routesUnion =
+  | "films"
+  | "people"
+  | "starships"
+  | "vehicles"
+  | "species"
+  | "planets";

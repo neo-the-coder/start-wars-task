@@ -1,10 +1,11 @@
 "use client";
 
+import { routesUnion } from "@/lib/types";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
-const links = [
+const routes: routesUnion[] = [
   "films",
   "people",
   "starships",
@@ -33,15 +34,15 @@ const Navbar = () => {
         <div className="mx-auto max-w-5xl flex items-center justify-between sm:justify-center gap-4 p-4 sm:p-0 bg-gray-900">
           {/* Desktop nav */}
           <div className="hidden sm:flex gap-3 md:gap-6">
-            {links.map((res) => (
+            {routes.map((route) => (
               <Link
-                key={res}
-                href={`/${res}`}
+                key={route}
+                href={`/${route}`}
                 className={`capitalize lightsaber-link font-sterilict ${
-                  path.startsWith(`/${res}`) ? "active" : ""
+                  path.startsWith(`/${route}`) ? "active" : ""
                 }`}
               >
-                {res}
+                {route}
               </Link>
             ))}
           </div>
@@ -81,16 +82,16 @@ const Navbar = () => {
             isOpen ? "translate-y-0" : "-translate-y-full"
           }`}
         >
-          {links.map((res) => (
+          {routes.map((route) => (
             <Link
-              key={res}
-              href={`/${res}`}
+              key={route}
+              href={`/${route}`}
               className={`capitalize font-sterilict text-center w-full px-4 py-2 lightsaber-link ${
-                path.startsWith(`/${res}`) ? "active" : ""
+                path.startsWith(`/${route}`) ? "active" : ""
               }`}
               onClick={() => setIsOpen(false)}
             >
-              {res}
+              {route}
             </Link>
           ))}
         </div>

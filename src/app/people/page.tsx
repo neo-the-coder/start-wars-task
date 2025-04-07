@@ -1,8 +1,19 @@
+import { routesUnion } from "@/lib/types";
 import { fetchPeople } from "../../lib/actions";
-import PeopleList from "@/components/PeopleList";
+import List from "@/components/List";
 
 export default async function PeoplePage() {
-  const initialPeople = await fetchPeople("https://swapi.dev/api/people/");
+  const route: routesUnion = "people";
+  
+  const initialPeople = await fetchPeople(
+    process.env.NEXT_PUBLIC_API_URL + route
+  );
 
-  return <PeopleList initialPeople={initialPeople} />;
+  return (
+    <List
+      route={route}
+      initialEntities={initialPeople}
+      fetchFunction={fetchPeople}
+    />
+  );
 }
