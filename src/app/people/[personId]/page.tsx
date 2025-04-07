@@ -1,6 +1,7 @@
-import { MultipleValueRow, SingleValueRow } from "@/components/DetailRow";
 import Details from "@/components/Details";
-import { fetchAllPeople, fetchSinglePerson } from "@/lib/api";
+import { MultipleValueRow, SingleValueRow } from "@/components/DetailRow";
+import { fetchEntitiesOfType, fetchSingleEntity } from "@/lib/api";
+import { IPerson } from "@/lib/types";
 import { extractId } from "@/lib/utils";
 import { notFound } from "next/navigation";
 
@@ -8,7 +9,7 @@ type PageParams = { params: Promise<{ personId: string }> };
 
 export async function generateMetadata({ params }: PageParams) {
   const { personId } = await params;
-  const person = await fetchSinglePerson(personId);
+  const person = (await fetchSingleEntity("people", personId)) as IPerson;
 
   if (!person) {
     return {
@@ -17,13 +18,13 @@ export async function generateMetadata({ params }: PageParams) {
   }
 
   return {
-    title: person.name + " | Star Wars Characters" || "Star Wars Character",
+    title: person.name || "Star Wars Character",
     description: `Details about ${person.name}`,
   };
 }
 
 export async function generateStaticParams() {
-  const people = await fetchAllPeople();
+  const people = await fetchEntitiesOfType("people");
 
   return people.map((person) => ({
     id: extractId(person.url),
@@ -32,7 +33,7 @@ export async function generateStaticParams() {
 
 export default async function SinglePersonPage({ params }: PageParams) {
   const { personId } = await params;
-  const person = await fetchSinglePerson(personId);
+  const person = (await fetchSingleEntity("people", personId)) as IPerson;
 
   if (!person) notFound();
 

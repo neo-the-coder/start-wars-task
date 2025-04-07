@@ -31,7 +31,7 @@ export function MultipleValueRow({
     <li className="flex justify-between gap-x-4">
       <span className="uppercase">{title}:</span>
       {ids.length ? (
-        <div className="flex items-center justify-between gap-2 flex-wrap">
+        <div className="flex items-center justify-end gap-2 flex-wrap">
           {ids.map((id) => (
             <Link
               key={id}

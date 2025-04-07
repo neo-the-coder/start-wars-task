@@ -79,7 +79,7 @@ const Navbar = () => {
         {/* Mobile menu dropdown */}
         <div
           className={`sm:hidden bg-gray-900 absolute -z-10 left-0 top-20 w-full my-2 p-4 flex flex-col items-center gap-2 transition-transform ease-in-out duration-300 ${
-            isOpen ? "translate-y-0" : "-translate-y-full"
+            isOpen ? "translate-y-0" : "-translate-y-[calc(100%_+_312px)]"
           }`}
         >
           {routes.map((route) => (

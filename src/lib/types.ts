@@ -74,7 +74,7 @@ export interface IVehicle extends IEntity {
   cargo_capacity: string;
   consumables: string;
   vehicle_class: string;
-  pilots?: string[];
+  pilots: string[];
 }
 
 export interface IStarship extends IVehicle {
