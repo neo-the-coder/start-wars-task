@@ -3,11 +3,6 @@ import localFont from 'next/font/local';
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 
-const anakinMono = localFont({
-  src: '../../public/fonts/anakinmono.ttf',
-  variable: '--font-anakin-mono'
-})
-
 const distantGalaxy = localFont({
   src: '../../public/fonts/SFDistantGalaxy.ttf',
   variable: '--font-distant-galaxy'
@@ -36,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${anakinMono.variable} ${distantGalaxy.variable} ${sterilict.variable} ${starJediOut.variable} antialiased bg-[url(/images/bg.webp)]`}
+        className={`${distantGalaxy.variable} ${sterilict.variable} ${starJediOut.variable} antialiased bg-[url(/images/bg.webp)]`}
       >
         <Navbar />
         <main>{children}</main>
