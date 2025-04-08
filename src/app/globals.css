@@ -11,9 +11,10 @@
   --font-distant-galaxy: var(--font-distant-galaxy);
   --font-star-jedi-outline: var(--font-star-jedi-outline);
   --font-sterilict: var(--font-sterilict);
-  --color-primary: #FFE81F;
-  --color-vivid-orange: #FDB50A;
-  --color-sw-green: #2FF924;
+  --color-primary: #ffe81f;
+  --color-vivid-orange: #fdb50a;
+  --color-sw-green: #2ff924;
+  --animate-galaxy: galaxy 240s infinite linear
 }
 
 @media (prefers-color-scheme: dark) {
@@ -33,33 +34,56 @@ button {
   cursor: pointer;
 }
 
+/* Background animation */
+@keyframes galaxy {
+  to {
+    background-position: 100vw 100vw;
+  }
+}
+
 /* Lightsaber effect */
 .lightsaber-link {
   position: relative;
-  color: white; /* Default text color */
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Glowing effect */
-  transition: color 0.3s ease, text-shadow 0.3s ease; /* Smooth transition for glow */
+  color: white;
+  /* Default text color */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  /* Glowing effect */
+  transition:
+    color 0.3s ease,
+    text-shadow 0.3s ease;
+  /* Smooth transition for glow */
 }
 
 .lightsaber-link:hover,
 .lightsaber-link.active {
-  color: #2ff924; /* Lightsaber color (green) */
-  text-shadow: 0 0 10px rgba(47, 249, 36, 0.8), 0 0 10px rgba(47, 249, 36, 0.8); /* Glowing effect */
+  color: #2ff924;
+  /* Lightsaber color (green) */
+  text-shadow:
+    0 0 10px rgba(47, 249, 36, 0.8),
+    0 0 10px rgba(47, 249, 36, 0.8);
+  /* Glowing effect */
 }
 
 .lightsaber-link.active {
-  animation: lightsaber-glow 1.5s infinite alternate; /* Glow animation */
+  animation: lightsaber-glow 1.5s infinite alternate;
+  /* Glow animation */
 }
 
 /* Keyframe animation for pulsing lightsaber effect */
 @keyframes lightsaber-glow {
   0% {
-    text-shadow: 0 0 5px rgba(47, 249, 36, 0.6), 0 0 10px rgba(47, 249, 36, 0.6);
+    text-shadow:
+      0 0 5px rgba(47, 249, 36, 0.6),
+      0 0 10px rgba(47, 249, 36, 0.6);
   }
+
   50% {
     color: rgba(47, 249, 36, 0.5);
   }
+
   100% {
-    text-shadow: 0 0 10px rgba(47, 249, 36, 1), 0 0 15px rgba(47, 249, 36, 1);
+    text-shadow:
+      0 0 10px rgba(47, 249, 36, 1),
+      0 0 15px rgba(47, 249, 36, 1);
   }
 }

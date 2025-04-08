@@ -1,8 +1,4 @@
-import {
-  IAPIResponseUnion,
-  IEntityUnion,
-  routesUnion,
-} from "./types";
+import { IAPIResponseUnion, IEntityUnion, routesUnion } from "./types";
 
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 

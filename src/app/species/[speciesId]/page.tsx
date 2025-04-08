@@ -39,21 +39,24 @@ export default async function SingleSpeciesPage({ params }: PageParams) {
 
   return (
     <Details name={species.name}>
-      <SingleValueRow title="Classification" value={species.classification} />
-      <SingleValueRow title="Designation" value={species.designation} />
-      <SingleValueRow title="Avg. Height" value={species.average_height + " cm"} />
-      <SingleValueRow title="Skin Colors" value={species.skin_colors} />
-      <SingleValueRow title="Hair Colors" value={species.hair_colors} />
-      <SingleValueRow title="Eye Colors" value={species.eye_colors} />
-      <SingleValueRow title="Avg. Lifespan" value={species.average_lifespan} />
-      <MultipleValueRow
-        title="Homeworld"
-        urls={[species.homeworld]}
-        route="planets"
+      <SingleValueRow title='Classification' value={species.classification} />
+      <SingleValueRow title='Designation' value={species.designation} />
+      <SingleValueRow
+        title='Avg. Height'
+        value={species.average_height + " cm"}
       />
-      <SingleValueRow title="Language" value={species.language} />
-      <MultipleValueRow title="People" urls={species.people} route="people" />
-      <MultipleValueRow title="Films" urls={species.films} route="films" />
+      <SingleValueRow title='Skin Colors' value={species.skin_colors} />
+      <SingleValueRow title='Hair Colors' value={species.hair_colors} />
+      <SingleValueRow title='Eye Colors' value={species.eye_colors} />
+      <SingleValueRow title='Avg. Lifespan' value={species.average_lifespan} />
+      <MultipleValueRow
+        title='Homeworld'
+        urls={[species.homeworld]}
+        route='planets'
+      />
+      <SingleValueRow title='Language' value={species.language} />
+      <MultipleValueRow title='People' urls={species.people} route='people' />
+      <MultipleValueRow title='Films' urls={species.films} route='films' />
     </Details>
   );
 }

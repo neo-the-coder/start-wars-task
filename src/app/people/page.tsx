@@ -6,7 +6,7 @@ export default async function PeoplePage() {
   const route: routesUnion = "people";
 
   const initialEntities = await fetchEntities(
-    process.env.NEXT_PUBLIC_API_URL + route
+    process.env.NEXT_PUBLIC_API_URL + route,
   );
 
   return (

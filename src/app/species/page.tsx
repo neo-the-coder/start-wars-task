@@ -4,9 +4,9 @@ import List from "@/components/List";
 
 export default async function SpeciesPage() {
   const route: routesUnion = "species";
-  
+
   const initialEntities = await fetchEntities(
-    process.env.NEXT_PUBLIC_API_URL + route
+    process.env.NEXT_PUBLIC_API_URL + route,
   );
 
   return (

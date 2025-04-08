@@ -9,10 +9,7 @@ type PageParams = { params: Promise<{ vehicleId: string }> };
 
 export async function generateMetadata({ params }: PageParams) {
   const { vehicleId } = await params;
-  const vehicle = (await fetchSingleEntity(
-    "vehicles",
-    vehicleId
-  )) as IVehicle;
+  const vehicle = (await fetchSingleEntity("vehicles", vehicleId)) as IVehicle;
 
   if (!vehicle) {
     return {
@@ -36,30 +33,27 @@ export async function generateStaticParams() {
 
 export default async function SingleVehiclesPage({ params }: PageParams) {
   const { vehicleId } = await params;
-  const vehicle = (await fetchSingleEntity(
-    "vehicles",
-    vehicleId
-  )) as IVehicle;
+  const vehicle = (await fetchSingleEntity("vehicles", vehicleId)) as IVehicle;
 
   if (!vehicle) notFound();
 
   return (
     <Details name={vehicle.name}>
-      <SingleValueRow title="Model" value={vehicle.model} />
-      <SingleValueRow title="Manufacturer" value={vehicle.manufacturer} />
-      <SingleValueRow title="Cost" value={vehicle.cost_in_credits + " Cr."} />
-      <SingleValueRow title="Length" value={vehicle.length} />
+      <SingleValueRow title='Model' value={vehicle.model} />
+      <SingleValueRow title='Manufacturer' value={vehicle.manufacturer} />
+      <SingleValueRow title='Cost' value={vehicle.cost_in_credits + " Cr."} />
+      <SingleValueRow title='Length' value={vehicle.length} />
       <SingleValueRow
-        title="Max Speed"
+        title='Max Speed'
         value={vehicle.max_atmosphering_speed}
       />
-      <SingleValueRow title="Crew" value={vehicle.crew} />
-      <SingleValueRow title="Passengers" value={vehicle.passengers} />
-      <SingleValueRow title="Cargo Capacity" value={vehicle.cargo_capacity} />
-      <SingleValueRow title="Consumables" value={vehicle.consumables} />
-      <SingleValueRow title="Class" value={vehicle.vehicle_class} />
-      <MultipleValueRow title="pilots" urls={vehicle.pilots} route="people" />
-      <MultipleValueRow title="Films" urls={vehicle.films} route="films" />
+      <SingleValueRow title='Crew' value={vehicle.crew} />
+      <SingleValueRow title='Passengers' value={vehicle.passengers} />
+      <SingleValueRow title='Cargo Capacity' value={vehicle.cargo_capacity} />
+      <SingleValueRow title='Consumables' value={vehicle.consumables} />
+      <SingleValueRow title='Class' value={vehicle.vehicle_class} />
+      <MultipleValueRow title='pilots' urls={vehicle.pilots} route='people' />
+      <MultipleValueRow title='Films' urls={vehicle.films} route='films' />
     </Details>
   );
 }

@@ -39,29 +39,29 @@ export default async function SinglePersonPage({ params }: PageParams) {
 
   return (
     <Details name={person.name}>
-      <SingleValueRow title="Height" value={person.height + " cm"} />
-      <SingleValueRow title="Mass" value={person.mass + " kg"} />
-      <SingleValueRow title="Hair Color" value={person.hair_color} />
-      <SingleValueRow title="Skin Color" value={person.skin_color} />
-      <SingleValueRow title="Eye Color" value={person.eye_color} />
-      <SingleValueRow title="Birth Year" value={person.birth_year} />
-      <SingleValueRow title="Gender" value={person.gender} />
+      <SingleValueRow title='Height' value={person.height + " cm"} />
+      <SingleValueRow title='Mass' value={person.mass + " kg"} />
+      <SingleValueRow title='Hair Color' value={person.hair_color} />
+      <SingleValueRow title='Skin Color' value={person.skin_color} />
+      <SingleValueRow title='Eye Color' value={person.eye_color} />
+      <SingleValueRow title='Birth Year' value={person.birth_year} />
+      <SingleValueRow title='Gender' value={person.gender} />
       <MultipleValueRow
-        title="Homeworld"
+        title='Homeworld'
         urls={[person.homeworld]}
-        route="planets"
+        route='planets'
       />
-      <MultipleValueRow title="Films" urls={person.films} route="films" />
-      <MultipleValueRow title="Species" urls={person.species} route="species" />
+      <MultipleValueRow title='Films' urls={person.films} route='films' />
+      <MultipleValueRow title='Species' urls={person.species} route='species' />
       <MultipleValueRow
-        title="Vehicles"
+        title='Vehicles'
         urls={person.starships}
-        route="vehicles"
+        route='vehicles'
       />
       <MultipleValueRow
-        title="Starships"
+        title='Starships'
         urls={person.starships}
-        route="starships"
+        route='starships'
       />
     </Details>
   );

@@ -13,18 +13,18 @@ export default function Breadcrumbs() {
   });
 
   return (
-    <nav className="text-sm text-white font-sterilict uppercase bg-transparent p-4 pl-0 rounded-md shadow-lg my-2">
-      <ul className="flex items-center space-x-2">
+    <nav className='font-sterilict my-2 rounded-md bg-transparent p-4 pl-0 text-sm text-white uppercase shadow-lg'>
+      <ul className='flex items-center space-x-2'>
         <li>
-          <Link href="/" className="hover:text-primary">
+          <Link href='/' className='hover:text-primary'>
             Home
           </Link>
         </li>
         {breadcrumbLinks.map((link) => (
           <React.Fragment key={link.href}>
-            <li className="text-gray-500">/</li>
+            <li className='text-gray-500'>/</li>
             <li>
-              <Link href={link.href} className="hover:text-primary">
+              <Link href={link.href} className='hover:text-primary'>
                 {link.value}
               </Link>
             </li>

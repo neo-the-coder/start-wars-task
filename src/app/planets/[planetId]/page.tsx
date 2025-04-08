@@ -39,20 +39,20 @@ export default async function SinglePlanetPage({ params }: PageParams) {
 
   return (
     <Details name={planet.name}>
-      <SingleValueRow title="Rotation Period" value={planet.rotation_period} />
-      <SingleValueRow title="Orbital Period" value={planet.orbital_period} />
-      <SingleValueRow title="Diameter" value={planet.diameter + " km"} />
-      <SingleValueRow title="Climate" value={planet.climate} />
-      <SingleValueRow title="Gravity" value={planet.gravity} />
-      <SingleValueRow title="Terrain" value={planet.terrain} />
-      <SingleValueRow title="Surface Water" value={planet.surface_water} />
-      <SingleValueRow title="Population" value={planet.population} />
+      <SingleValueRow title='Rotation Period' value={planet.rotation_period} />
+      <SingleValueRow title='Orbital Period' value={planet.orbital_period} />
+      <SingleValueRow title='Diameter' value={planet.diameter + " km"} />
+      <SingleValueRow title='Climate' value={planet.climate} />
+      <SingleValueRow title='Gravity' value={planet.gravity} />
+      <SingleValueRow title='Terrain' value={planet.terrain} />
+      <SingleValueRow title='Surface Water' value={planet.surface_water} />
+      <SingleValueRow title='Population' value={planet.population} />
       <MultipleValueRow
-        title="Residents"
+        title='Residents'
         urls={planet.residents}
-        route="people"
+        route='people'
       />
-      <MultipleValueRow title="Films" urls={planet.films} route="films" />
+      <MultipleValueRow title='Films' urls={planet.films} route='films' />
     </Details>
   );
 }

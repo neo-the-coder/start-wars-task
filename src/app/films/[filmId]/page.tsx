@@ -39,30 +39,30 @@ export default async function SingleFilmPage({ params }: PageParams) {
 
   return (
     <Details name={film.title} filmDescription={film.opening_crawl}>
-      <SingleValueRow title="Episode" value={film.episode_id.toString()} />
-      <SingleValueRow title="Director" value={film.director} />
-      <SingleValueRow title="Producer" value={film.producer} />
+      <SingleValueRow title='Episode' value={film.episode_id.toString()} />
+      <SingleValueRow title='Director' value={film.director} />
+      <SingleValueRow title='Producer' value={film.producer} />
       <SingleValueRow
-        title="Release Date"
+        title='Release Date'
         value={formatDate(film.release_date)}
       />
       <MultipleValueRow
-        title="Characters"
+        title='Characters'
         urls={film.characters}
-        route="people"
+        route='people'
       />
-      <MultipleValueRow title="Planets" urls={film.planets} route="planets" />
+      <MultipleValueRow title='Planets' urls={film.planets} route='planets' />
       <MultipleValueRow
-        title="Starships"
+        title='Starships'
         urls={film.starships}
-        route="starships"
+        route='starships'
       />
       <MultipleValueRow
-        title="Vehicles"
+        title='Vehicles'
         urls={film.vehicles}
-        route="vehicles"
+        route='vehicles'
       />
-      <MultipleValueRow title="Species" urls={film.species} route="species" />
+      <MultipleValueRow title='Species' urls={film.species} route='species' />
     </Details>
   );
 }

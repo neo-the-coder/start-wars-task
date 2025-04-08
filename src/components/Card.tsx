@@ -18,18 +18,24 @@ export default function Card({
   const details = shownDetails[route];
   return (
     <Link href={`/${route}/${id}`}>
-      <div className="min-h-[200px] bg-black/60 p-4 border-4 border-vivid-orange shadow-md rounded-md hover:bg-gray-600 transition font-distant-galaxy h-full">
-        <h2 className="font-sterilict max-sm:text-xl text-center tracking-wider text-vivid-orange font-normal mb-8 lowercase">
+      <div className='border-vivid-orange font-distant-galaxy h-full min-h-[200px] rounded-md border-4 bg-black/60 p-4 shadow-md transition hover:bg-gray-600'>
+        <h2 className='font-sterilict text-vivid-orange mb-8 text-center font-normal tracking-wider lowercase max-sm:text-xl'>
           {name}
         </h2>
-        <ul className="font-sans tracking-wider">
+        <ul className='font-sans tracking-wider'>
           {details.map(({ detailTitle, detailProp }) => {
             const value = formattedValue(
-              (data[detailProp as keyof IEntityUnion]).toString(),
-              detailProp
+              data[detailProp as keyof IEntityUnion].toString(),
+              detailProp,
             );
 
-            return <SingleValueRow title={detailTitle} value={value} key={detailProp} />;
+            return (
+              <SingleValueRow
+                title={detailTitle}
+                value={value}
+                key={detailProp}
+              />
+            );
           })}
         </ul>
       </div>

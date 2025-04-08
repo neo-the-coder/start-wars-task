@@ -1,22 +1,22 @@
 import type { Metadata } from "next";
-import localFont from 'next/font/local';
+import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 
 const distantGalaxy = localFont({
-  src: '../../public/fonts/SFDistantGalaxy.ttf',
-  variable: '--font-distant-galaxy'
-})
+  src: "../../public/fonts/SFDistantGalaxy.ttf",
+  variable: "--font-distant-galaxy",
+});
 
 const sterilict = localFont({
-  src: '../../public/fonts/Sterilict.ttf',
-  variable: '--font-sterilict'
-})
+  src: "../../public/fonts/Sterilict.ttf",
+  variable: "--font-sterilict",
+});
 
 const starJediOut = localFont({
-  src: '../../public/fonts/Starjout.ttf',
-  variable: '--font-star-jedi-outline'
-})
+  src: "../../public/fonts/Starjout.ttf",
+  variable: "--font-star-jedi-outline",
+});
 
 export const metadata: Metadata = {
   title: "Star Wars Explorer",
@@ -29,9 +29,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang='en'>
       <body
-        className={`${distantGalaxy.variable} ${sterilict.variable} ${starJediOut.variable} antialiased bg-[url(/images/bg.webp)]`}
+        className={`${distantGalaxy.variable} ${sterilict.variable} ${starJediOut.variable} animate-galaxy bg-[url(/images/bg.webp)] bg-size-[100vw_auto] antialiased`}
       >
         <Navbar />
         <main>{children}</main>

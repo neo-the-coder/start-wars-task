@@ -121,9 +121,21 @@ export type IAPIResponseUnion =
   | ISpeciesAPIResponse
   | IPlanetsAPIResponse;
 
-export type IEntityUnion = IFilm | IPerson | IStarship | IVehicle | ISpecies | IPlanet;
+export type IEntityUnion =
+  | IFilm
+  | IPerson
+  | IStarship
+  | IVehicle
+  | ISpecies
+  | IPlanet;
 
-export type IEntityKeysUnion = keyof IPerson | keyof IVehicle | keyof IFilm | keyof IStarship | keyof ISpecies | keyof IPlanet;
+export type IEntityKeysUnion =
+  | keyof IPerson
+  | keyof IVehicle
+  | keyof IFilm
+  | keyof IStarship
+  | keyof ISpecies
+  | keyof IPlanet;
 
 export type routesUnion =
   | "films"

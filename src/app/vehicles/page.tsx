@@ -4,9 +4,9 @@ import List from "@/components/List";
 
 export default async function VehiclesPage() {
   const route: routesUnion = "vehicles";
-  
+
   const initialEntities = await fetchEntities(
-    process.env.NEXT_PUBLIC_API_URL + route
+    process.env.NEXT_PUBLIC_API_URL + route,
   );
 
   return (
