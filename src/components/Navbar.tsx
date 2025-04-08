@@ -24,7 +24,7 @@ const Navbar = () => {
         </Link>
       </div>
       <nav className='z-20 bg-gray-900 p-4 drop-shadow-sm drop-shadow-black sm:sticky sm:top-0'>
-        <div className='mx-auto flex max-w-5xl items-center justify-between gap-4 bg-gray-900 p-4 sm:justify-center sm:p-0'>
+        <div className='mx-auto flex max-w-5xl items-center justify-between gap-4 p-4 sm:justify-center sm:p-0'>
           {/* Desktop nav */}
           <div className='hidden gap-3 sm:flex md:gap-6'>
             {routes.map((route) => (

@@ -16,7 +16,10 @@ export default function Breadcrumbs() {
     <nav className='font-sterilict my-2 rounded-md bg-transparent p-4 pl-0 text-sm text-white uppercase shadow-lg'>
       <ul className='flex items-center space-x-2'>
         <li>
-          <Link href='/' className='hover:text-primary'>
+          <Link
+            href='/'
+            className='hover:text-primary text-shadow-md text-shadow-white/30'
+          >
             Home
           </Link>
         </li>
@@ -24,7 +27,10 @@ export default function Breadcrumbs() {
           <React.Fragment key={link.href}>
             <li className='text-gray-500'>/</li>
             <li>
-              <Link href={link.href} className='hover:text-primary'>
+              <Link
+                href={link.href}
+                className='hover:text-primary text-shadow-md text-shadow-white/30'
+              >
                 {link.value}
               </Link>
             </li>

@@ -14,7 +14,7 @@
   --color-primary: #ffe81f;
   --color-vivid-orange: #fdb50a;
   --color-sw-green: #2ff924;
-  --animate-galaxy: galaxy 240s infinite linear
+  --animate-galaxy: galaxy 240s infinite linear;
 }
 
 @media (prefers-color-scheme: dark) {

@@ -22,7 +22,7 @@ export default function Details({
   return (
     <section className='mx-auto min-h-screen max-w-4xl p-10 pt-0'>
       <Breadcrumbs />
-      <section className='rounded-md bg-gradient-to-t from-gray-900 to-gray-700 p-8 shadow-lg'>
+      <section className='rounded-md bg-gradient-to-t from-gray-900/85 to-gray-700/85 p-8 shadow-lg'>
         <header className='mt-4 mb-12'>
           {/* Avatar */}
           <div className='border-primary mx-auto mb-8 flex h-30 w-30 items-center justify-center rounded-full border-2 bg-black'>

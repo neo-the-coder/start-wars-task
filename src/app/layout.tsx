@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Link from "next/link";
 
 const distantGalaxy = localFont({
   src: "../../public/fonts/SFDistantGalaxy.ttf",
@@ -35,7 +36,17 @@ export default function RootLayout({
       >
         <Navbar />
         <main>{children}</main>
-        <footer>Made with love by neo-the-coder</footer>
+        <footer className='font-sterilict bg-gray-900 p-4 text-center tracking-[3px] capitalize'>
+          Made with love by{" "}
+          <Link
+            href='https://github.com/neo-the-coder'
+            rel='noopener noreferrer'
+            target='_blank'
+            className='hover:text-sw-green transition-colors duration-200 ease-in'
+          >
+            neo-the-coder
+          </Link>
+        </footer>
       </body>
     </html>
   );

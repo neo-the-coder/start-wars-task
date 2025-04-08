@@ -36,7 +36,7 @@ export default function List({
   }, [fetchFunction, inView, nextUrl]);
 
   return (
-    <div className='mx-auto max-w-7xl p-8 pt-0'>
+    <div className='mx-auto min-h-screen max-w-7xl p-8 pt-0'>
       <h1 className='font-distant-galaxy my-8 space-x-2 text-center text-3xl tracking-wider capitalize'>
         {route}
       </h1>
