@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Link from "next/link";
+import ScrollUp from "@/components/ScrollUp";
 
 const distantGalaxy = localFont({
   src: "../../public/fonts/SFDistantGalaxy.ttf",
@@ -36,6 +37,7 @@ export default function RootLayout({
       >
         <Navbar />
         <main>{children}</main>
+        <ScrollUp />
         <footer className='font-sterilict bg-gray-900 p-4 text-center tracking-[3px] capitalize'>
           Made with love by{" "}
           <Link
